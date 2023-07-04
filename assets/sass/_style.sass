@@ -5,6 +5,16 @@
     font-size: px2rem(30)
 
 .accueil-bis
+    header#document-header
+        @include media-breakpoint-up(desktop)
+            .container
+                flex-direction: column
+                .logo
+                    margin: 10px 0 10px
+    .hero 
+        min-height: 0
+    h1
+        display: none
     img
         max-width: 30px !important
         height: auto
@@ -17,25 +27,36 @@
         height: auto
         transition: 0.1s ease-out 50ms
         border: none
-    figure
-        height: 0
-        align-self: center
     li
         display: block
         flex-direction: row
         grid-gap: px2rem(12) !important
-    h3
-        font-size: px2rem(22)
-        font-weight: normal
+        h3
+            font-size: px2rem(15)
+            font-weight: normal
+            margin-top: 0.5rem !important
+    .top
+        width: auto !important
+    a
+        background: url(/assets/images/papier.png) lightgray 50% / cover no-repeat
+        background-size: 
+        padding: 12px
+        padding-top: 2px
+        padding-bottom: 2px
+        text-decoration: none
     .block-features
-        height: 100vh
+        width: col(6)
         ul
             display: flex !important
             flex-direction: column
             grid-gap: px2rem(4) !important
+            justify-content: start
     .blocks
+        height: 100vh
         display: flex
         flex-direction: row
         align-self: center
     .block
         margin-top: 0
+    .breadcrumb-container
+        display: none
