@@ -9,10 +9,10 @@
         background: none
         @include media-breakpoint-up(desktop)
             .container
-                flex-direction: column
+                // flex-direction: column
                 .logo
                     margin: 10px 0 10px
-    .hero 
+    .hero
         min-height: 0
     h1
         display: none
@@ -22,41 +22,48 @@
         border: 1px solid #FFF
         box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.20)
     img:hover
-        -ms-transform: scale(15) /* IE 9 */
-        -webkit-transform: scale(1.5) /* Safari 3-8 */
-        transform: scale(15)
-        height: auto
-        transition: 0.1s ease-out 50ms
-        border: none
+        @include media-breakpoint-up(desktop)
+            -ms-transform: scale(15) /* IE 9 */
+            -webkit-transform: scale(1.5) /* Safari 3-8 */
+            transform: scale(15)
+            height: auto
+            transition: 0.1s ease-out 50ms
+            border: none
     li
-        display: block
-        flex-direction: row
-        grid-gap: px2rem(12) !important
+        @include media-breakpoint-up(desktop)
+            display: block
+            // flex-direction: row
+            grid-gap: px2rem(12) !important
         h3
-            font-size: px2rem(15)
             font-weight: normal
-            margin-top: 0.5rem !important
+            @include media-breakpoint-up(desktop)
+                font-size: px2rem(15)
+                margin-top: 0.5rem !important
     .top
-        width: auto !important
+        @include media-breakpoint-up(desktop)
+            width: auto !important
     a
         background: url(/assets/images/papier.png) lightgray 50% / cover no-repeat
-        background-size: 
-        padding: 12px
-        padding-top: 2px
-        padding-bottom: 2px
         text-decoration: none
+        @include media-breakpoint-up(desktop)
+            padding: 12px
+            padding-top: 2px
+            padding-bottom: 2px
     .block-features
-        width: col(6)
+        @include media-breakpoint-up(desktop)
+            width: col(6)
         ul
-            display: flex !important
-            flex-direction: column
-            grid-gap: px2rem(4) !important
-            justify-content: start
+            @include media-breakpoint-up(desktop)
+                // display: flex !important
+                // flex-direction: column
+                grid-gap: px2rem(4) !important
+                justify-content: start
     .blocks
-        height: 100vh
-        display: flex
-        flex-direction: row
         align-self: center
+        @include media-breakpoint-up(desktop)
+            // height: 100vh
+            // display: flex
+            // flex-direction: row
     .block
         margin-top: 0
     .breadcrumb-container
