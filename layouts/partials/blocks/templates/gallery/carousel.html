@@ -24,7 +24,6 @@
           <figcaption>
             {{ $image.name }}
             {{ if .text }}
-              <div>{{ partial "PrepareHTML" .text }}</div>
             {{ end }}
             {{ if .credit }}
               <div class="credit">{{ partial "PrepareHTML" .credit }}</div>
