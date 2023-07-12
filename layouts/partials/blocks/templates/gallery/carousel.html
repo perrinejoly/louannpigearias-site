@@ -1,0 +1,37 @@
+{{ range .images }}
+  {{ if .file }}
+    {{- $image := partial "GetMedia" .file -}}
+    {{- if $image -}}
+      <figure>
+        {{ if not site.Params.image_sizes.design_system.lightbox.disabled }}
+          <a  class="glightbox"
+              role="button"
+              data-glightbox="type: image;{{ if .credit }}description: {{ partial "PrepareHTML" .credit }}{{ end }}"
+              href="{{ partial "GetLightboxUrl" (dict "id" .id) }}"
+              title="{{- i18n "commons.lightbox.link.title" -}}"
+              aria-label="{{- i18n "commons.lightbox.link.title" -}}">
+        {{ end }}
+            {{ partial "commons/image.html"
+              (dict
+                "image"    .id
+                "alt"      .alt
+                "sizes"   (dict "mobile" 40 "tablet" 40 "desktop" 40)
+              )}}
+        {{ if not site.Params.image_sizes.design_system.lightbox.disabled }}
+          </a>
+        {{ end }}
+        {{ if or .text .credit }}
+          <figcaption>
+            {{ $image.name }}
+            {{ if .text }}
+              <div>{{ partial "PrepareHTML" .text }}</div>
+            {{ end }}
+            {{ if .credit }}
+              <div class="credit">{{ partial "PrepareHTML" .credit }}</div>
+            {{ end }}
+          </figcaption>
+        {{ end }}
+      </figure>
+    {{- end -}}
+  {{ end }}
+{{ end }}
