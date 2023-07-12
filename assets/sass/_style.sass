@@ -8,8 +8,6 @@ a.logo
     margin: 10px 0 10px
     @include media-breakpoint-up(desktop)
         padding: 12px
-        padding-top: 2px
-        padding-bottom: 2px
 .hero
     .container
         .content
@@ -34,15 +32,16 @@ body:not(.full-width) .document-content .block .block-content
     padding-left: 0
 
 .block-gallery--carousel
-    figure
-        display: flex
+    picture
+        img
+            width: 40px
+    figcaption
+        margin-left: $spacing0
+        align-content: center
+    a
+        display: flex !important
         flex-direction: row
-        picture
-            img
-                width: 40px
-        figcaption
-            margin-left: $spacing0
-            align-content: center
+
 
 .goverlay
     background: white
